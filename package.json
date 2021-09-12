@@ -1,0 +1,37 @@
+{
+  "name": "ts-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-cli serve --mode development",
+    "build": "webpack --mode=production",
+    "lint-fix": "eslint --fix ./src/**/*.{js,ts}"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.0",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.3",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "linkt-staged"
+    }
+  },
+  "link-staged": {
+    "src/**/*.{js,ts}": [
+      "npm run lint-fix"
+    ]
+  }
+}
